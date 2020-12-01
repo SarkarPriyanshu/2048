@@ -5,6 +5,7 @@ window.onload = function () {
     const resultDisplay = document.getElementById('result');
     const resultMessage = document.getElementById('result-Message');
     window.localStorage.setItem('Score',0);
+    window.localStorage.setItem('HighScore',score);
     const width = 4;
     let squares = [];
     let score = 0;
@@ -240,7 +241,8 @@ window.onload = function () {
         }
         //Get score and stored it into local storage
         window.localStorage.setItem('Score',score);
-        window.localStorage.setItem('HighScore',score);
+        
+
         //Comparing two key of local storage to set high score
         if(parseInt(localStorage.getItem('Score')) >= parseInt(localStorage.getItem('HighScore')))
         {
