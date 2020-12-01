@@ -234,8 +234,10 @@ window.onload = function () {
     function check(score) {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i] == 2048) {
-                resultDisplay.innerHTML = `You Win!!`
+                resultDisplay.classList.toggle('display');
+                resultMessage.innerHTML = `You Win!!`
                 document.removeEventListener('keyup', control)
+                window.localStorage.setItem('Score',0);
             }
         }
         //Get score and stored it into local storage
