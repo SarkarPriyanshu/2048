@@ -5,7 +5,7 @@ window.onload = function () {
     const resultDisplay = document.getElementById('result');
     const resultMessage = document.getElementById('result-Message');
     window.localStorage.setItem('Score',0);
-    window.localStorage.setItem('HighScore',score);
+    window.localStorage.setItem('HighScore',0);
     const width = 4;
     let squares = [];
     let score = 0;
