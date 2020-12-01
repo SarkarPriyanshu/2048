@@ -233,7 +233,7 @@ window.onload = function () {
     //checkOut win
     function check(score) {
         for (let i = 0; i < squares.length; i++) {
-            if (squares[i] == 2048) {
+            if (squares[i].innerHTML == 2048) {
                 resultDisplay.classList.toggle('display');
                 resultMessage.innerHTML = `You Win!!`
                 document.removeEventListener('keyup', control)
