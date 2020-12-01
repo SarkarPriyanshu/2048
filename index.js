@@ -21,8 +21,15 @@ window.onload = function () {
         console.log(squares);
         generateNumber();
         generateNumber();
+        
         //Setting High score using local storage value
-        document.querySelector('.Last-score').innerHTML =`High Score ${parseInt(window.localStorage.getItem('HighScore'))}`;
+        if(parseInt(window.localStorage.getItem('HighScore')) != 0){
+            document.querySelector('.Last-score').innerHTML =`High Score ${parseInt(window.localStorage.getItem('HighScore'))}`;
+        }else{
+            window.localStorage.setItem('HighScore',0)
+            document.querySelector('.Last-score').innerHTML =`High Score ${parseInt(window.localStorage.getItem('HighScore'))}`;
+        }
+
     }
 
     creatBoard();
@@ -135,6 +142,7 @@ window.onload = function () {
 
 
     function combineRow() {
+        
         for (let i = 0; i < 15; i++) {
             if (squares[i].innerHTML === squares[i + 1].innerHTML) {
                 let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i + 1].innerHTML);
